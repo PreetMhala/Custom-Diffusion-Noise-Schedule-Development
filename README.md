@@ -6,6 +6,76 @@ This repository contains the final term project for **CSE 527: Computer Vision**
 
 Diffusion models have revolutionized generative AI. This project explores the **EDM2** framework, specifically investigating how different **noise schedules** (Linear, Cosine, Logarithmic, Quadratic) impact generation quality. Furthermore, we implement conditional generation to control facial attributes (e.g., "Smiling", "Eyeglasses") and facial landmarks.
 
+```mermaid
+graph LR
+    %% Styles
+    classDef dataset fill:#e1f5fe,stroke:#01579b,stroke-width:2px,color:#01579b;
+    classDef process fill:#f3e5f5,stroke:#4a148c,stroke-width:2px,color:#4a148c;
+    classDef model fill:#e8f5e9,stroke:#1b5e20,stroke-width:2px,color:#1b5e20;
+    classDef schedule fill:#fff3e0,stroke:#e65100,stroke-width:2px,color:#e65100;
+    classDef artifact fill:#fff8e1,stroke:#ff6f00,stroke-width:2px,stroke-dasharray: 5 5,color:#ff6f00;
+
+    subgraph Data ["DATA PREPARATION"]
+        CelebA[("CelebA Dataset")]:::dataset
+        Preproc["Resize (64x64) & Norm"]:::process
+        CondData["Attributes / Landmarks"]:::dataset
+    end
+
+    subgraph Schedule ["NOISE SCHEDULE STRATEGY"]
+        NS{"Select Schedule"}:::schedule
+        Linear["Linear"]:::schedule
+        Cosine["Cosine"]:::schedule
+        Log["Logarithmic"]:::schedule
+        Quad["Quadratic"]:::schedule
+    end
+
+    subgraph Training ["TRAINING LOOP (EDM2)"]
+        SampleT["Sample Time t ~ U[0,1]"]:::process
+        CalcSigma["Calculate σ(t)"]:::process
+        Noise["Sample Noise n ~ N(0, I)"]:::process
+        Corrupt["Corrupt: x + n*σ"]:::process
+        UNet[/"EDM2 Precond U-Net"/]:::model
+        Loss["Loss: Weight * ||D(x+n,σ) - x||²"]:::process
+        Update["Backprop & Optimize"]:::process
+    end
+
+    subgraph Inference ["INFERENCE & EVALUATION"]
+        RandNoise["Random Gaussian Noise"]:::dataset
+        Sampler["Iterative Denoising<br/>(Euler/Heun)"]:::process
+        GenImg["Generated Images"]:::artifact
+        Eval["FID Score Evaluation"]:::process
+    end
+
+    %% Data Flow
+    CelebA --> Preproc
+    CondData -.-> UNet
+    Preproc --> Corrupt
+    Preproc --> Loss
+
+    %% Schedule Flow
+    NS --> Linear
+    NS --> Cosine
+    NS --> Log
+    NS --> Quad
+    Linear & Cosine & Log & Quad --> CalcSigma
+    SampleT --> CalcSigma
+    CalcSigma --> Corrupt
+    CalcSigma --> UNet
+    CalcSigma --> Sampler
+
+    %% Training Flow
+    Noise --> Corrupt
+    Corrupt --> UNet
+    UNet --> Loss
+    Loss --> Update
+
+    %% Inference Flow
+    RandNoise --> Sampler
+    Sampler --> GenImg
+    GenImg --> Eval
+
+```
+
 ## 🚀 Key Features
 
 *   **Noise Schedule Analysis**: Comprehensive comparison of Linear, Cosine, Logarithmic, and Quadratic noise schedules in the EDM2 training loop.
