@@ -1,0 +1,201 @@
+
+=== EDM2 FULL EVALUATION STARTED ===
+Project root: /home_local/pmhala/prit_edm2_project
+==> Preparing full test labels...
+Found 19962 test images.
+Saved full test labels & filenames.
+==> Generating conditional images...
+Using device: cuda
+Loading model: /home_local/pmhala/prit_edm2_project/network-snapshot-0001572-0.100_karrasrho_40attr.pkl
+Total samples: 19962
+  Generated 64/19962
+  Generated 1344/19962
+  Generated 2624/19962
+  Generated 3904/19962
+  Generated 5184/19962
+  Generated 6464/19962
+  Generated 7744/19962
+  Generated 9024/19962
+  Generated 10304/19962
+  Generated 11584/19962
+  Generated 12864/19962
+  Generated 14144/19962
+  Generated 15424/19962
+  Generated 16704/19962
+  Generated 17984/19962
+  Generated 19264/19962
+DONE generating images.
+==> Computing overall FID...
+Generated images: 19962
+Loading feature statistics from /home_local/pmhala/prit_edm2_project/edm2_eval_outputs/celeba64_full_ref.pkl ...
+Loading images from /home_local/pmhala/prit_edm2_project/edm2_eval_outputs/cond-generated-full ...
+Setting up InceptionV3Detector...
+Calculating feature statistics...
+Calculating fid...
+
+fid = 20.259
+
+==> Computing per-attribute FID...
+
+--- Attribute 0: 5_o_Clock_Shadow ---
+  Using 1994 samples for 5_o_Clock_Shadow
+  FID[5_o_Clock_Shadow] = 34.8389
+
+--- Attribute 1: Arched_Eyebrows ---
+  Using 5678 samples for Arched_Eyebrows
+  FID[Arched_Eyebrows] = 20.1942
+
+--- Attribute 2: Attractive ---
+  Using 9898 samples for Attractive
+  FID[Attractive] = 18.8804
+
+--- Attribute 3: Bags_Under_Eyes ---
+  Using 4045 samples for Bags_Under_Eyes
+  FID[Bags_Under_Eyes] = 27.7449
+
+--- Attribute 4: Bald ---
+  Using 423 samples for Bald
+  FID[Bald] = 67.3220
+
+--- Attribute 5: Bangs ---
+  Using 3109 samples for Bangs
+  FID[Bangs] = 26.0281
+
+--- Attribute 6: Big_Lips ---
+  Using 6528 samples for Big_Lips
+  FID[Big_Lips] = 21.5091
+
+--- Attribute 7: Big_Nose ---
+  Using 4232 samples for Big_Nose
+  FID[Big_Nose] = 27.6544
+
+--- Attribute 8: Black_Hair ---
+  Using 5422 samples for Black_Hair
+  FID[Black_Hair] = 24.3325
+
+--- Attribute 9: Blond_Hair ---
+  Using 2660 samples for Blond_Hair
+  FID[Blond_Hair] = 24.8910
+
+--- Attribute 10: Blurry ---
+  Using 1010 samples for Blurry
+  FID[Blurry] = 46.2949
+
+--- Attribute 11: Brown_Hair ---
+  Using 3587 samples for Brown_Hair
+  FID[Brown_Hair] = 22.9896
+
+--- Attribute 12: Bushy_Eyebrows ---
+  Using 2586 samples for Bushy_Eyebrows
+  FID[Bushy_Eyebrows] = 28.7104
+
+--- Attribute 13: Chubby ---
+  Using 1058 samples for Chubby
+  FID[Chubby] = 43.7344
+
+--- Attribute 14: Double_Chin ---
+  Using 913 samples for Double_Chin
+  FID[Double_Chin] = 43.8345
+
+--- Attribute 15: Eyeglasses ---
+  Using 1289 samples for Eyeglasses
+  FID[Eyeglasses] = 43.4249
+
+--- Attribute 16: Goatee ---
+  Using 915 samples for Goatee
+  FID[Goatee] = 48.0747
+
+--- Attribute 17: Gray_Hair ---
+  Using 636 samples for Gray_Hair
+  FID[Gray_Hair] = 52.5560
+
+--- Attribute 18: Heavy_Makeup ---
+  Using 8084 samples for Heavy_Makeup
+  FID[Heavy_Makeup] = 19.3519
+
+--- Attribute 19: High_Cheekbones ---
+  Using 9618 samples for High_Cheekbones
+  FID[High_Cheekbones] = 20.4158
+
+--- Attribute 20: Male ---
+  Using 7715 samples for Male
+  FID[Male] = 27.0767
+
+--- Attribute 21: Mouth_Slightly_Open ---
+  Using 9883 samples for Mouth_Slightly_Open
+  FID[Mouth_Slightly_Open] = 21.7225
+
+--- Attribute 22: Mustache ---
+  Using 772 samples for Mustache
+  FID[Mustache] = 53.4044
+
+--- Attribute 23: Narrow_Eyes ---
+  Using 2968 samples for Narrow_Eyes
+  FID[Narrow_Eyes] = 28.2490
+
+--- Attribute 24: No_Beard ---
+  Using 17041 samples for No_Beard
+  FID[No_Beard] = 19.9474
+
+--- Attribute 25: Oval_Face ---
+  Using 5901 samples for Oval_Face
+  FID[Oval_Face] = 22.7951
+
+--- Attribute 26: Pale_Skin ---
+  Using 840 samples for Pale_Skin
+  FID[Pale_Skin] = 41.7278
+
+--- Attribute 27: Pointy_Nose ---
+  Using 5704 samples for Pointy_Nose
+  FID[Pointy_Nose] = 21.5148
+
+--- Attribute 28: Receding_Hairline ---
+  Using 1694 samples for Receding_Hairline
+  FID[Receding_Hairline] = 35.3601
+
+--- Attribute 29: Rosy_Cheeks ---
+  Using 1432 samples for Rosy_Cheeks
+  FID[Rosy_Cheeks] = 29.4828
+
+--- Attribute 30: Sideburns ---
+  Using 926 samples for Sideburns
+  FID[Sideburns] = 47.7809
+
+--- Attribute 31: Smiling ---
+  Using 9987 samples for Smiling
+  FID[Smiling] = 20.6430
+
+--- Attribute 32: Straight_Hair ---
+  Using 4190 samples for Straight_Hair
+  FID[Straight_Hair] = 26.3596
+
+--- Attribute 33: Wavy_Hair ---
+  Using 7267 samples for Wavy_Hair
+  FID[Wavy_Hair] = 19.5708
+
+--- Attribute 34: Wearing_Earrings ---
+  Using 4125 samples for Wearing_Earrings
+  FID[Wearing_Earrings] = 23.5213
+
+--- Attribute 35: Wearing_Hat ---
+  Using 839 samples for Wearing_Hat
+  FID[Wearing_Hat] = 77.1284
+
+--- Attribute 36: Wearing_Lipstick ---
+  Using 10418 samples for Wearing_Lipstick
+  FID[Wearing_Lipstick] = 18.7571
+
+--- Attribute 37: Wearing_Necklace ---
+  Using 2753 samples for Wearing_Necklace
+  FID[Wearing_Necklace] = 25.1853
+
+--- Attribute 38: Wearing_Necktie ---
+  Using 1399 samples for Wearing_Necktie
+  FID[Wearing_Necktie] = 47.3189
+
+--- Attribute 39: Young ---
+  Using 15114 samples for Young
+  FID[Young] = 20.0238
+
+Saved per-attribute FID → /home_local/pmhala/prit_edm2_project/edm2_eval_outputs/attr_fid_eval_full/per_attribute_fid_full.csv
+=== DONE ===
